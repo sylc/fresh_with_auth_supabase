@@ -1,12 +1,10 @@
 import { MiddlewareHandlerContext } from "$fresh/server.ts";
 import { getCookies } from "$std/http/cookie.ts";
 import * as jose from '$jose'
+import { User } from "../lib/types.ts";
 
 export interface ICtxRootState {
-  user?: {
-    name: string;
-    avatar_url: string;
-  };
+  user?: User;
   SB_URL: string;
 }
 
@@ -15,7 +13,7 @@ export async function handler(
   ctx: MiddlewareHandlerContext<ICtxRootState>,
 ) {
 
-  ctx.state.SB_URL = `https://${Deno.env.get('SB_PROJECT')}.supabase.co`
+  ctx.state.SB_URL = `${Deno.env.get('SB_PROJECT_URL')}`
 
   // read the jwt 
   const accessToken = getCookies(req.headers)['access_token']

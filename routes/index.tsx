@@ -23,8 +23,10 @@ export default function Home({ data }: PageProps<User | null | undefined>) {
   return (
     <div>
       {data?.name && <div>
-        <h1>{data.name}</h1> 
-        <a href='/signout'>Signout</a>
+        <div>{data.name}</div>
+        <a href='/app'>App</a>
+        <br/>
+        <a href='/signout'>Log out</a>
       </div>}
       <a href="/login">Login</a>
       <img
@@ -32,10 +34,9 @@ export default function Home({ data }: PageProps<User | null | undefined>) {
         height="100px"
         alt="the fresh logo: a sliced lemon dripping with juice"
       />
-      <p>
-        Welcome to `fresh`. Try update this message in the ./routes/index.tsx
-        file, and refresh.......
-      </p>
+      <h1>
+        Welcome to your super website with `fresh`.
+      </h1>
       <Counter start={3} />
     </div>
   );

@@ -14,7 +14,7 @@ export default function AuthCallbackRedirect() {
 		if (access_token && refresh_token && expires_in) {
       fetch(`${globalThis.location.origin}/api/auth/oauth_callback?${hash.substring(1)}`).then(res => {
         if(res.status === 200) {
-          window.location.replace('/')
+          window.location.replace('/app')
         } else {
           // TODO: ...
         }

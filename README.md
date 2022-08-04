@@ -32,7 +32,14 @@ This works great for basic usage. However if some parameter needs to be retrieve
 
 TODO:. Not tested yet.
 
-### Resources
+## TODOs
+
+- refresh access token
+- handle errors
+- bit of styling
+- how to create something like a cart?
+
+## Resources
 - JWT anatomy https://fusionauth.io/learn/expert-advice/tokens/anatomy-of-jwt
 - https://stackoverflow.com/questions/69126222/how-can-i-create-a-signed-jwt-using-npm-jose-and-then-verify-this-token
 
