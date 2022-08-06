@@ -9,27 +9,29 @@ export async function handler(
 ): Promise<Response> {
   // signout on the server
   const access_token = getCookies(req.headers)["access_token"];
-  if (access_token) {   
+  if (access_token) {
     const supabaseUrl = ctx.state.SB_URL;
-    const gs = new GoTrueApi({ 
+    const gs = new GoTrueApi({
       url: `${supabaseUrl}/auth/v1`,
       headers: {
-        apiKey: Deno.env.get('SB_ANON')!
-      }
-     });
-    
-     try {
-      // This will only revoke the refresh token onthe server. 
+        apiKey: Deno.env.get("SB_ANON")!,
+      },
+    });
+
+    try {
+      // This will only revoke the refresh token onthe server.
       // There is no way to invalidate an access token on the server
       // Extra note: https://github.com/supabase/gotrue-js/issues/201
       await gs.signOut(access_token);
-    } catch (err){
-      console.log(err)
+    } catch (err) {
+      console.log(err);
       // do nothing
     }
-
   }
-  const response = new Response("ok", { status: 303, headers: { location: "/" } });
+  const response = new Response("ok", {
+    status: 303,
+    headers: { location: "/" },
+  });
 
   // Expiry cookies on the client
   setCookie(response.headers, {

@@ -7,7 +7,6 @@ export default function Home() {
       Admin Section
 
       // All users
-
     </div>
   );
 }

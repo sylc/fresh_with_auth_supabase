@@ -4,8 +4,8 @@ import { h } from "preact";
 import { ICtxRootState } from "./_middleware.ts";
 
 interface IProps {
-  SB_URL: string,
-  origin: string
+  SB_URL: string;
+  origin: string;
 }
 
 export const handler: Handler<IProps, ICtxRootState> = (req, ctx) => {
@@ -16,7 +16,7 @@ export const handler: Handler<IProps, ICtxRootState> = (req, ctx) => {
 export default function Login({ data }: PageProps<IProps>) {
   const link = (provider: string) =>
     `${data.SB_URL}/auth/v1/authorize?provider=${provider}&redirect_to=${data.origin}/api/auth/oauth_callback`;
-  
+
   return (
     <div>
       <h1>Login</h1>
