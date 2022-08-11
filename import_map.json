@@ -7,6 +7,6 @@
     "$oauth": "https://deno.land/x/oauth2_client/mod.ts",
     "$std/": "https://deno.land/std@0.140.0/",
     "$jose": "https://deno.land/x/jose@v4.8.3/index.ts",
-    "$gotrue": "https://deno.land/x/gotrue@3.0.0/mod.ts"
+    "$gotrueD": "https://deno.land/x/gotrue@3.0.0/mod.ts"
   }
 }

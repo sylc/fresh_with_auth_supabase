@@ -43,12 +43,9 @@ TODO:. Not tested yet.
 
 ## TODOs
 
-- refresh access token
 - handle errors
 - bit of styling
 - how to create something like a cart?
-- BUG is redo a login while already having a token?? it happens when the
-  redirect_to was not working and from localhost i got into fresh.
 
 ## To Deploy
 
@@ -61,7 +58,7 @@ TODO:. Not tested yet.
 
 In Authentication > settings
 
-- Set the SIte URL as the new deploy address eg: https://xxxxx.deno.dev
+- Set the Site URL as the new deploy address eg: https://xxxxx.deno.dev
 - Add a "Redirect URLs": http://localhost:8000/api/auth/oauth_callback
 
 ## Resources

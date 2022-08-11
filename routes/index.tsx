@@ -19,7 +19,7 @@ export const handler: Handlers<User | null | undefined, State> = {
 };
 
 export default function Home({ data }: PageProps<User | null | undefined>) {
-  console.log("user", data);
+  // console.log("user", data);
   return (
     <div>
       {data?.name && (
